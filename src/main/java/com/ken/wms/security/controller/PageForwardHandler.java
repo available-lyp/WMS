@@ -41,6 +41,6 @@ public class PageForwardHandler {
         if (!currentSubject.isAuthenticated())
             return "login";
         else
-        return "mainPage";
+        	return "mainPage";
     }
 }
