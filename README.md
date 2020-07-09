@@ -6,6 +6,9 @@ jdk1.8<br>
 tomcat8.0<br>
 mysql5.7<br>
 
+# 联系方式
+wenkang_zeng@outlook.com
+
 ## 部分截图
 
 ![](https://raw.githubusercontent.com/KEN-LJQ/MarkdownPics/master/Resource/2017-3-9/WMS-%E6%88%AA%E5%9B%BE1.PNG)
@@ -26,5 +29,4 @@ mysql5.7<br>
 
 ![](https://raw.githubusercontent.com/KEN-LJQ/MarkdownPics/master/Resource/2017-3-9/WMS-%E6%88%AA%E5%9B%BE9.PNG)
 
-# 联系方式
-wenkang_zeng@outlook.com
+
