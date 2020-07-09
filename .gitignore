@@ -11,3 +11,14 @@ src/main/webapp/WEB-INF/logs/
 # IDE support file
 .idea
 WMS.iml
+.settings/.jsdtscope
+.project
+.settings/org.eclipse.wst.common.component
+.settings/org.eclipse.wst.jsdt.ui.superType.container
+.settings/org.eclipse.wst.validation.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
+.settings/org.eclipse.m2e.core.prefs
+.settings/org.eclipse.wst.jsdt.ui.superType.name
+.classpath
