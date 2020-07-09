@@ -2,8 +2,9 @@
 基于SSM框架的仓库管理系统
 
 # 运行环境
-jdk1.8
-tomcat8.0
+jdk1.8<br>
+tomcat8.0<br>
+mysql5.7<br>
 原作者：@KEN-LJQ
 
 ## 部分截图
