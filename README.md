@@ -7,6 +7,7 @@ tomcat8.0<br>
 mysql5.7<br>
 
 # 联系方式
+有任何部署问题，请联系邮箱（付费）
 wenkang_zeng@outlook.com
 
 ## 部分截图
