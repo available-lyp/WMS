@@ -6,6 +6,10 @@ jdk1.8<br>
 tomcat8.0<br>
 mysql5.7<br>
 
+# 登录账号
+账号：1001<br>
+密码：123456<br>
+
 # 联系方式
 有任何部署问题，请联系邮箱（付费）
 wenkang_zeng@outlook.com
