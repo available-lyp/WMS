@@ -102,7 +102,7 @@
         <property name="user" value="${jdbc.user}"/>
         <property name="password" value="${jdbc.password}"/>
         <property name="driverClass" value="${jdbc.driverClass}"/>
-        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}?useUnicode=true&amp;characterEncoding=utf8"/>
         <property name="testConnectionOnCheckout" value="${jdbc.testConnectionOnCheckout}"/>
     </bean>
 
