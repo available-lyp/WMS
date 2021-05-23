@@ -230,3 +230,10 @@ ALTER TABLE `wms_record_storage`
 	ADD PRIMARY KEY (`RECORD_GOODID`, `RECORD_REPOSITORY`),
 	DROP FOREIGN KEY `wms_record_storage_ibfk_1`,
 	DROP FOREIGN KEY `wms_record_storage_ibfk_2`;
+
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('15', '2');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('22', '2');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('37', '2');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('44', '2');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('8', '2');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('45', '2');
