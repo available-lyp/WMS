@@ -72,6 +72,37 @@ public class RepositoryManageServiceImpl implements RepositoryService {
     }
 
     /**
+     * 返回指定 admin ID 的仓库记录
+     *
+     * @param adminID 管理员ID
+     * @return 结果的一个Map，其中： key为 data 的代表记录数据；key 为 total 代表结果记录的数量
+     */
+    @Override
+    public Map<String, Object> selectByAdminId(Integer adminID) throws RepositoryManageServiceException {
+        // 初始化結果集
+        Map<String, Object> resultSet = new HashMap<>();
+        List<Repository> repositories = new ArrayList<>();
+        long total = 0;
+
+        // 查詢
+        Repository repository;
+        try {
+            repository = repositoryMapper.selectRepoByAdminID(adminID);
+        } catch (PersistenceException e) {
+            throw new RepositoryManageServiceException(e);
+        }
+
+        if (repository != null) {
+            repositories.add(repository);
+            total = 1;
+        }
+
+        resultSet.put("data", repositories);
+        resultSet.put("total", total);
+        return resultSet;
+    }
+
+    /**
      * 返回指定 repository address 的仓库记录 支持查询分页以及模糊查询
      *
      * @param offset  分页的偏移值

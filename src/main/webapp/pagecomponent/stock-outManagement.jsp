@@ -529,6 +529,7 @@ function infoModal(type, msg) {
 												<input type="text" class="form-control" placeholder="仓库编号">
 											-->
 												<select name="" id="repository_selector" class="form-control">
+													<option value="">请选择仓库</option>
 												</select>
 											</div>
 										</form>

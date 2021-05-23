@@ -25,6 +25,14 @@ public interface RepositoryService {
     Map<String, Object> selectById(Integer repositoryId) throws RepositoryManageServiceException;
 
     /**
+     * 返回指定 repository ID 的仓库记录
+     *
+     * @param adminId 仓库ID
+     * @return 结果的一个Map，其中： key为 data 的代表记录数据；key 为 total 代表结果记录的数量
+     */
+    Map<String, Object> selectByAdminId(Integer adminId) throws RepositoryManageServiceException;
+
+    /**
      * 返回指定 repository address 的仓库记录
      * 支持查询分页以及模糊查询
      *

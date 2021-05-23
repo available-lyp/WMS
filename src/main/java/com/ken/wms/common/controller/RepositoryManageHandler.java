@@ -1,11 +1,18 @@
 package com.ken.wms.common.controller;
 
+import com.ken.wms.common.service.Interface.RepositoryAdminManageService;
 import com.ken.wms.common.service.Interface.RepositoryService;
 import com.ken.wms.common.util.Response;
 import com.ken.wms.common.util.ResponseUtil;
 import com.ken.wms.domain.Repository;
+import com.ken.wms.domain.RepositoryAdmin;
+import com.ken.wms.exception.RepositoryAdminManageServiceException;
 import com.ken.wms.exception.RepositoryManageServiceException;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +45,7 @@ public class RepositoryManageHandler {
     private static final String SEARCH_BY_ID = "searchByID";
     private static final String SEARCH_BY_ADDRESS = "searchByAddress";
     private static final String SEARCH_ALL = "searchAll";
+    private static final String SEARCH_BY_ADMINID = "searchByAdminID";
 
     /**
      * 通用的记录查询
@@ -62,6 +70,11 @@ public class RepositoryManageHandler {
                 break;
             case SEARCH_ALL:
                 queryResult = repositoryService.selectAll(offset, limit);
+                break;
+            case SEARCH_BY_ADMINID:
+                if (StringUtils.isNumeric(keyword)) {
+                    queryResult = repositoryService.selectByAdminId(Integer.valueOf(keyword));
+                }
                 break;
             default:
                 // do other thing
@@ -89,6 +102,49 @@ public class RepositoryManageHandler {
                                           @RequestParam("keyWord") String keyWord) throws RepositoryManageServiceException {
         // 初始化 Response
         Response responseContent = responseUtil.newResponseInstance();
+
+        List<Repository> rows = null;
+        long total = 0;
+
+        // 查询
+        Map<String, Object> queryResult = query(searchType, keyWord, offset, limit);
+
+        if (queryResult != null) {
+            rows = (List<Repository>) queryResult.get("data");
+            total = (long) queryResult.get("total");
+        }
+
+        // 设置 Response
+        responseContent.setCustomerInfo("rows", rows);
+        responseContent.setResponseTotal(total);
+        return responseContent.generateResponse();
+    }
+
+    /**
+     * 查询仓库信息
+     *
+     * @param searchType 查询类型
+     * @param offset     分页偏移值
+     * @param limit      分页大小
+     * @param keyWord    查询关键字
+     * @return 返回一个Map，其中key=rows，表示查询出来的记录；key=total，表示记录的总条数
+     */
+    @SuppressWarnings("unchecked")
+    @RequestMapping(value = "getRepositoryListCommon", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Map<String, Object> getRepositoryListCommon(@RequestParam("searchType") String searchType,
+                                          @RequestParam("offset") int offset, @RequestParam("limit") int limit,
+                                          @RequestParam("keyWord") String keyWord)throws RepositoryAdminManageServiceException,RepositoryManageServiceException {
+        // 初始化 Response
+        Response responseContent = responseUtil.newResponseInstance();
+
+        //TODO
+        Subject currentSubject = SecurityUtils.getSubject();
+        Session session = currentSubject.getSession();
+        Integer userID = (Integer)session.getAttribute("userID");
+        searchType = SEARCH_BY_ADMINID;
+        keyWord = userID.toString();
 
         List<Repository> rows = null;
         long total = 0;

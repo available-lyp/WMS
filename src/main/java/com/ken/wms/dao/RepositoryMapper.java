@@ -30,6 +30,13 @@ public interface RepositoryMapper {
 	 * @return 返回指定的Repository
 	 */
 	Repository selectByID(Integer repositoryID);
+
+	/**
+	 * 选择指定 管理员 ID 的 Repository 记录
+	 * @param adminID 管理员id
+	 * @return 返回指定的Repository
+	 */
+	Repository selectRepoByAdminID(Integer adminID);
 	
 	/**
 	 * 选择指定 repository Address 的 repository 记录
