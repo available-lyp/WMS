@@ -11,9 +11,9 @@ public class RepoTempHumDO {
 
     private Integer repoID;
 
-    private Integer temp;
+    private Float temp;
 
-    private Integer hum;
+    private Float hum;
 
     private Integer repoAdminID;
 
@@ -37,19 +37,19 @@ public class RepoTempHumDO {
         this.repoID = repoID;
     }
 
-    public Integer getTemp() {
+    public Float getTemp() {
         return temp;
     }
 
-    public void setTemp(Integer temp) {
+    public void setTemp(Float temp) {
         this.temp = temp;
     }
 
-    public Integer getHum() {
+    public Float getHum() {
         return hum;
     }
 
-    public void setHum(Integer hum) {
+    public void setHum(Float hum) {
         this.hum = hum;
     }
 

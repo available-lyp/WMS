@@ -68,8 +68,8 @@
 
     function addRepoTempHumRecord() {
         var data = {
-            temp : parseInt($('#temp').val()),
-            hum : parseInt($('#hum').val()),
+            temp : parseFloat($('#temp').val()),
+            hum : parseFloat($('#hum').val()),
             remark : $('#remark').val(),
             createTimeStr : $('#createTime').val()
         }
