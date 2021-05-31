@@ -161,4 +161,34 @@
 			<value>库存数量</value>
 		</property>
 	</entity>
+	<entity class="com.ken.wms.domain.RepoTempHumDTO">
+		<property>
+			<field>logID</field>
+			<value>记录ID</value>
+		</property>
+		<property>
+			<field>repoID</field>
+			<value>仓库ID</value>
+		</property>
+		<property>
+			<field>temp</field>
+			<value>温度</value>
+		</property>
+		<property>
+			<field>hum</field>
+			<value>湿度</value>
+		</property>
+		<property>
+			<field>repoAdminName</field>
+			<value>管理员名称</value>
+		</property>
+		<property>
+			<field>createTimeStr</field>
+			<value>时间</value>
+		</property>
+		<property>
+			<field>remark</field>
+			<value>备注</value>
+		</property>
+	</entity>
 </configuration>

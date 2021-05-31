@@ -139,7 +139,6 @@ public class RepositoryManageHandler {
         // 初始化 Response
         Response responseContent = responseUtil.newResponseInstance();
 
-        //TODO
         Subject currentSubject = SecurityUtils.getSubject();
         Session session = currentSubject.getSession();
         Integer userID = (Integer)session.getAttribute("userID");

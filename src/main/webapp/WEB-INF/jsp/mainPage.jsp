@@ -232,6 +232,38 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
                 </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a href="#collapse6" data-toggle="collapse" data-parent="#accordion"
+                               class="parentMenuTitle collapseHead">仓库环境信息</a>
+                            <div class="pull-right">
+                                <span class="caret"></span>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse collapseBody">
+                        <div class="panel-body">
+                            <shiro:hasRole name="systemAdmin">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a href="javascript:void(0)" id="" class="menu_item"
+                                           name="pagecomponent/repoTempHumRecord.jsp">查看仓库温湿度</a>
+                                    </li>
+                                </ul>
+                            </shiro:hasRole>
+                            <shiro:hasRole name="commonsAdmin">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a href="javascript:void(0)" id="" class="menu_item"
+                                           name="pagecomponent/repoTempHumManagement.jsp">仓库温湿度管理</a>
+                                    </li>
+                                </ul>
+                            </shiro:hasRole>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

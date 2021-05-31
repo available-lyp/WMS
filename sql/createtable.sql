@@ -237,3 +237,28 @@ INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('37', '2
 INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('44', '2');
 INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('8', '2');
 INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('45', '2');
+
+
+INSERT INTO `wms_db`.`wms_action` (`ACTION_ID`, `ACTION_NAME`, `ACTION_PARAM`) VALUES ('49', 'getRepoTempHumList', '/repoTempHum/getRepoTempHumList');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('49', '1');
+
+INSERT INTO `wms_db`.`wms_action` (`ACTION_ID`, `ACTION_NAME`, `ACTION_PARAM`) VALUES ('50', 'addRepoTempHumRecord', '/repoTempHum/addRepoTempHumRecord');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('50', '2');
+
+INSERT INTO `wms_db`.`wms_action` (`ACTION_ID`, `ACTION_NAME`, `ACTION_PARAM`) VALUES ('51', 'exportRepoTempHumRecord', '/repoTempHum/exportRecord');
+INSERT INTO `wms_db`.`wms_role_action` (`ACTION_ID`, `ROLE_ID`) VALUES ('51', '1');
+
+CREATE TABLE `wms_repo_temp_hum` (
+	`LOG_ID` INT(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+	`REPO_ID` INT(11) NOT NULL COMMENT '仓库id',
+	`TEMP` INT(11) NOT NULL COMMENT '温度',
+	`HUM` INT(11) NOT NULL COMMENT '湿度',
+	`REPO_ADMIN_ID` INT(11) NOT NULL COMMENT '仓库管理员id',
+	`CREATE_TIME` DATETIME NOT NULL COMMENT '记录时间',
+	`REMARK` VARCHAR(100) NULL DEFAULT NULL COMMENT '备注' COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`LOG_ID`) USING BTREE
+)
+COMMENT='仓库温湿度信息表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
